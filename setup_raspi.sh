@@ -20,14 +20,6 @@ sudo service vsftpd restart
 # Create the "projects" directory in the home directory
 mkdir ~/projects
 
-# Set a static IP address for wlan0 (replace with your network configuration)
-sudo tee -a /etc/dhcpcd.conf <<EOL
-interface wlan0
-static ip_address=192.168.0.77/24
-static routers=192.168.0.1
-static domain_name_servers=192.168.0.1
-EOL
-
 # Restart the networking service to apply the static IP
 sudo systemctl restart dhcpcd
 
